@@ -49,6 +49,26 @@ window.onload = function(){
             }
         }
     }
+    // 返回顶部
 
 
-}
+    //tab菜单
+    var tab = document.getElementById('tab');
+    var aLi = tab.getElementsByTagName('li');
+
+
+    for(var i=0; i<aLi.length; i++){
+
+        aLi[i].onclick = function(){
+
+            for(var i=0; i<aLi.length; i++){
+
+                aLi[i].className = '';
+                this.className = 'active';
+
+            }   
+        }
+    }
+
+};
+//当前进度 top按钮的制作  tab菜单的完善
