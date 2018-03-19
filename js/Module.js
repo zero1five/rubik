@@ -64,11 +64,32 @@ const M = ( global => {
 
         return newArr
     }
-    
+
+    /**
+     * This function is used to deeply copy objects
+     * @param { object } obj - Copied object
+     */
+    function deepCopy(obj) {
+
+        if (typeof obj != 'object') {  /* 终止递归 */
+            return obj
+        }
+        
+        let newObj = {} 
+
+        for ( let attr in obj ) {
+            newObj[attr] = deepCopy(obj[attr]) /* 递归调用 */
+        }
+
+        return newObj
+
+    }
+
     return {
         Refresh,
         CreateWorker,
         FilterData,
+        deepCopy
     }
 
 })(window)
