@@ -71,14 +71,14 @@ const M = ( global => {
      */
     function deepCopy(obj) {
 
-        if (typeof obj != 'object') {  /* 终止递归 */
+        if (typeof obj != 'object') {  /** Jump out of recursion */
             return obj
         }
         
         let newObj = {} 
 
         for ( let attr in obj ) {
-            newObj[attr] = deepCopy(obj[attr]) /* 递归调用 */
+            newObj[attr] = deepCopy(obj[attr]) /** Recursive call */
         }
 
         return newObj
